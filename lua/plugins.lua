@@ -59,13 +59,13 @@ return packer.startup(function(use)
   -- mainpage
   use "goolord/alpha-nvim"
 
-  use({ "williamboman/nvim-lsp-installer" })
-  -- Lspconfig
-  use({ "neovim/nvim-lspconfig" })
-  -- 补全引擎
-  use("hrsh7th/nvim-cmp")
-  -- Snippet 引擎
-  use("hrsh7th/vim-vsnip")
+  -- use({ "williamboman/nvim-lsp-installer" })
+  -- -- Lspconfig
+  -- use({ "neovim/nvim-lspconfig" })
+  -- -- 补全引擎
+  -- use("hrsh7th/nvim-cmp")
+  -- -- Snippet 引擎
+  -- use("hrsh7th/vim-vsnip")
   -- 补全源
   -- use("hrsh7th/cmp-vsnip")
   -- use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
