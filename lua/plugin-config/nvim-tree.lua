@@ -11,6 +11,8 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
+	git = {enable=false},
+	disable_netrw = true,
   renderer = {
     root_folder_modifier = ":t",
     icons = {
@@ -60,5 +62,12 @@ nvim_tree.setup {
         { key = "v", cb = tree_cb "vsplit" },
       },
     },
+  },
+
+  actions = {
+	open_file = {
+	  resize_window = true,
+	  quit_on_open = true,
+	},
   },
 }

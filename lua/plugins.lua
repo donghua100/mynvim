@@ -50,8 +50,9 @@ return packer.startup(function(use)
   use "kyazdani42/nvim-tree.lua"
 
   -- Colorschemes 
-  use("tanvirtin/monokai.nvim")
-
+  use "tanvirtin/monokai.nvim"
+  use "folke/tokyonight.nvim"
+  use "lunarvim/darkplus.nvim"
   -- bufferline
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
@@ -81,7 +82,7 @@ return packer.startup(function(use)
   -- use("folke/lua-dev.nvim")
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use 'nvim-telescope/telescope-media-files.nvim'
+  -- use 'nvim-telescope/telescope-media-files.nvim'
   
   -- Treesitter
   use {
