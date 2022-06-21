@@ -78,4 +78,13 @@ vim.o.showtabline = 2
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
 vim.o.showmode = false
 -- 配置剪切板
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = "unnamedplus" -- maybe ned xsel
+
+-- fold
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()" -- nedd treesitter plugin 
+-- 默认不要折叠
+-- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
+vim.opt.foldenable = false
+vim.opt.foldlevel = 99
+

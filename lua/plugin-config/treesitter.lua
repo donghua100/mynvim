@@ -17,3 +17,7 @@ configs.setup {
   },
   indent = { enable = true, disable = { "yaml" } },
 }
+
+-- :TSModuleInfo
+-- :TSIntallInfo
+-- :TSBufToggle highlight
