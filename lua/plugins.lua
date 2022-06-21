@@ -101,6 +101,27 @@ return packer.startup(function(use)
   -- comment
   -- use 'JoosepAlviste/nvim-ts-context-commentstring'
 
+
+  -- lualine
+  use "nvim-lualine/lualine.nvim"
+  -- which-key
+  use "folke/which-key.nvim"
+
+  -- toggleterm
+  -- use "akinsho/toggleterm.nvim"
+	
+  -- comment
+  use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "numToStr/Comment.nvim"
+
+ -- autopairs
+  use "windwp/nvim-autopairs"
+
+ -- dap 
+  -- use "mfussenegger/nvim-dap"
+  -- use "rcarriga/nvim-dap-ui"
+  -- use "ravenxrz/DAPInstall.nvim"
+
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
