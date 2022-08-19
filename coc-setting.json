@@ -19,7 +19,9 @@
         }
       },
 
-
+		"metals": {
+			"millScript": "/usr/local/bin/mill"
+		},
 
         "bash": {
         "command": "bash-language-server",
