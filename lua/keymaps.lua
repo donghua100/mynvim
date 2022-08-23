@@ -27,6 +27,12 @@ keymap("n", "<S-l>", "<C-w>l", opts)
 
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
+
+keymap("n", "<C-j>", "5j", opts)
+keymap("n", "<C-k>", "5k", opts)
+keymap("v", "<C-j>", "5j", opts)
+keymap("v", "<C-k>", "5k", opts)
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -92,11 +98,20 @@ local coc_opts = {
 	silent = true
 }
 
+local coc_expr_opts = {expr = true,noremap = true,silent = true}
 -- coc-nvim
 keymap("n", "gd","<Plug>(coc-definition)",coc_opts)
 keymap("n", "gy","<Plug>(coc-type-definition)",coc_opts)
 keymap("n", "gi","<Plug>(coc-implementation)",coc_opts)
 keymap("n", "gr","<Plug>(coc-references)",coc_opts)
+
+function _G.CheckBackspace()
+    local col = vim.api.nvim_win_get_cursor(0)[2]
+    return (col == 0 or vim.api.nvim_get_current_line():sub(col, col):match('%s')) and true
+end
+keymap("i", "<TAB>", "coc#pum#visible() ? coc#pum#next(1):v:lua.CheckBackspace() ? \"\\<Tab>\" :coc#refresh()", coc_expr_opts)
+keymap("i", "<S-TAB>", "coc#pum#visible() ? coc#pum#prev(1) : \"\\<C-h>\"", coc_expr_opts)
+keymap("i", "<CR>", "coc#pum#visible() ? coc#pum#confirm() : \"\\<C-g>u\\<CR>\\<c-r>=coc#on_enter()\\<CR>\"", coc_expr_opts)
 
 -- buffline
 keymap("n", "<C-w>", ":Bdelete!<CR>", opts)
