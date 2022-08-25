@@ -9,6 +9,11 @@ vim.cmd[[
 	autocmd BufWinEnter * :TSBufToggle highlight
 	augroup end
 
+    augroup _coc_sel_color
+    autocmd!
+    autocmd VimEnter,ColorScheme * hi! link CocMenuSel PMenuSel
+    autocmd VimEnter,ColorScheme * hi! link CocSearch Identifier
+    augroup end
 
 ]]
 	-- augroup _colorscheme_coc
