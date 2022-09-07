@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/guishuo/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
   },
+  ["nvim-metals"] = {
+    loaded = true,
+    path = "/home/guishuo/.local/share/nvim/site/pack/packer/start/nvim-metals",
+    url = "https://github.com/scalameta/nvim-metals"
+  },
   ["nvim-tree.lua"] = {
     loaded = true,
     path = "/home/guishuo/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
