@@ -116,6 +116,8 @@ return packer.startup(function(use)
 
  -- autopairs
   use "windwp/nvim-autopairs"
+  -- color
+  use "norcalli/nvim-colorizer.lua"
 
  -- dap 
   -- use "mfussenegger/nvim-dap"
