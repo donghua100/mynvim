@@ -116,12 +116,14 @@ return packer.startup(function(use)
 
  -- autopairs
   use "windwp/nvim-autopairs"
+  -- color
+  use "norcalli/nvim-colorizer.lua"
 
  -- dap 
   -- use "mfussenegger/nvim-dap"
   -- use "rcarriga/nvim-dap-ui"
   -- use "ravenxrz/DAPInstall.nvim"
-
+  -- use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
