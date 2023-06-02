@@ -5,6 +5,9 @@ local term_opts = { silent = true }
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 
+
+
+
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
@@ -136,3 +139,56 @@ keymap("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_o
 -- fold
 keymap("n", "zz", ":foldclose<CR>", opts)
 keymap("n", "Z", ":foldopen<CR>", opts)
+
+
+
+-- insert fix code
+local code = [[
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void solve() {
+}
+
+int main() {
+	int t;
+	cin >> t;
+	while (t--) {
+		solve();
+    }
+	return 0;
+}
+]]
+
+-- local function processNewlines(text)
+--     local format = vim.bo.fileformat
+--     if format == 'dos' then
+--         -- Windows格式，将'\n'替换为'\r\n'
+--         text = text:gsub('\n', '\r\n')
+--     elseif format == 'unix' then
+--         -- Unix格式，保持不变
+--     else
+--         -- 其他格式，默认按照Unix格式处理
+--         text = text:gsub('\n', '\r\n')
+--     end
+--     return text
+-- end
+
+-- local function processNewlines(text)
+--     return text:gsub('\n', vim.api.nvim_replace_termcodes('\n', true, false, true))
+-- end
+
+_G.insertCode =  function()
+	local current_line = vim.api.nvim_get_current_line()
+    local current_row, current_col = unpack(vim.api.nvim_win_get_cursor(0))
+    vim.api.nvim_buf_set_lines(0, current_row, current_row, true, vim.split(code, '\n'))
+    vim.api.nvim_win_set_cursor(0, { current_row + #vim.split(code, '\n'), current_col })
+    -- local current_buffer = vim.api.nvim_get_current_buf()
+	-- local processed_code = processNewlines(code)
+    -- vim.api.nvim_put({ processed_code }, 'l', true, true)
+    -- vim.api.nvim_buf_set_option(current_buffer, 'modified', false)
+end
+
+
+keymap("n", "cf","<cmd>lua insertCode()<CR>", opts)
