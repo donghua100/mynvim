@@ -97,7 +97,7 @@ return packer.startup(function(use)
   use "ahmedkhalf/project.nvim"
   
   -- coc.nvim
-  use ({'neoclide/coc.nvim', branch = 'release'})
+  use ({'neoclide/coc.nvim'})
   -- comment
   -- use 'JoosepAlviste/nvim-ts-context-commentstring'
 
@@ -118,6 +118,9 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs"
   -- color
   use "norcalli/nvim-colorizer.lua"
+
+  -- terminal
+  use "akinsho/toggleterm.nvim"
 
  -- dap 
   -- use "mfussenegger/nvim-dap"

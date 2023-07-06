@@ -1,4 +1,5 @@
 {
 	"clangd.inlayHints.enable": false,
 	"pyright.inlayHints.enable": false
+
 }
