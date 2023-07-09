@@ -1,4 +1,4 @@
-local status_ok, ter = pcall(require, "nvim-autopairs")
+local status_ok, ter = pcall(require, "toggleterm")
 if not status_ok then
   return
 end

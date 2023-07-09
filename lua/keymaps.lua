@@ -23,18 +23,18 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 -- Better window navigation
-keymap("n", "<S-h>", "<C-w>h", opts)
-keymap("n", "<S-j>", "<C-w>j", opts)
-keymap("n", "<S-k>", "<C-w>k", opts)
-keymap("n", "<S-l>", "<C-w>l", opts)
+keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-j>", "<C-w>j", opts)
+keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 
-keymap("n", "<leader>e", ":Lex 30<cr>", opts)
+-- keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
 
-keymap("n", "<C-j>", "5j", opts)
-keymap("n", "<C-k>", "5k", opts)
-keymap("v", "<C-j>", "5j", opts)
-keymap("v", "<C-k>", "5k", opts)
+--[[ keymap("n", "<A-j>", "5j", opts) ]]
+--[[ keymap("n", "<A-k>", "5k", opts) ]]
+--[[ keymap("v", "<A-j>", "5j", opts) ]]
+--[[ keymap("v", "<A-k>", "5k", opts) ]]
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -43,8 +43,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<C-l>", ":bnext<CR>", opts)
-keymap("n", "<C-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -88,12 +88,12 @@ keymap("n", "so", "<C-w>o", opts) -- close others
 -- Telecope
 keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
 --keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = true }))<cr>", opts)
-keymap("n","<c-t>","<cmd>lua require('telescope.builtin').live_grep()<cr>",opts)
+keymap("n","<leader>g","<cmd>lua require('telescope.builtin').live_grep()<cr>",opts)
 -- keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- nvimtree
 keymap("n", "<leader>m", ":NvimTreeToggle<cr>", opts)
-keymap("n", "<A-m>", ":NvimTreeToggle<cr>", opts)
+-- keymap("n", "<A-m>", ":NvimTreeToggle<cr>", opts)
 
 
 -- local coc_opts = {
@@ -117,7 +117,7 @@ keymap("n", "<A-m>", ":NvimTreeToggle<cr>", opts)
 -- keymap("i", "<CR>", "coc#pum#visible() ? coc#pum#confirm() : \"\\<C-g>u\\<CR>\\<c-r>=coc#on_enter()\\<CR>\"", coc_expr_opts)
 
 -- buffline
-keymap("n", "<C-w>", ":Bdelete!<CR>", opts)
+keymap("n", "<C-q>", ":Bdelete!<CR>", opts)
 
 -- comment
 keymap("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
